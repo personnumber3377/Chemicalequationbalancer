@@ -340,13 +340,20 @@ def getratio(substance1, substance2, oofshit, all_substances):
 	print(oofshit[0])
 
 	print(substance1)
+	print("all_substances == "+str(all_substances))
+	print("oofshit == "+str(oofshit))
+	print("oofshit[0] == "+str(oofshit[0]))
+	print("oofshit[0][0] == "+str(oofshit[0][0]))
+	print("substance2 == "+str(substance2))
+	print("substance1 == "+str(substance1))
+	#print(oofshit[0][0][all_substances.index(substance2)])
+	#print(oofshit[0][0][all_substances.index(substance1)])
+	i = 0
+	while True:
+		
+		ratio = oofshit[0][0][all_substances.index(substance1)]/oofshit[0][0][all_substances.index(substance2)]
+		
 
-	print(oofshit[0][0][all_substances.index(substance2)])
-	print(oofshit[0][0][all_substances.index(substance1)])
-
-
-
-	ratio = oofshit[0][0][all_substances.index(substance1)]/oofshit[0][0][all_substances.index(substance2)]
 	return ratio
 
 
