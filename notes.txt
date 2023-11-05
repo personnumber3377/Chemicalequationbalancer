@@ -1,0 +1,4 @@
+0.0132109122134883 moles of nitrogen gas
+0.0220181870224806 moles of water vapour
+0.0264218244269767 moles of carbon dioxide
+0.00220181870224806 moles of oxygen gas

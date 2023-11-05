@@ -1,0 +1,5 @@
+Na2.C1.O3+H1.Cl1->Na1.Cl1+C1.O2+H2.O1
+n
+Na2.C1.O3
+H1.Cl1
+0.0028m

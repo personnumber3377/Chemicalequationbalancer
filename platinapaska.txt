@@ -1,0 +1,5 @@
+Pt1+H1.Cl1+H1.N1.O3->H2.Pt1.Cl6+N1.O1+H2.O1
+n
+H2.Pt1.Cl6
+Pt1
+1

@@ -1,0 +1,5 @@
+Ti1.Cl4+Mg1->Ti1+Mg1.Cl2
+n
+Ti1
+Ti1.Cl4 Mg1
+35400 8300
