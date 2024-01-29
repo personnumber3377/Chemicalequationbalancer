@@ -205,7 +205,7 @@ def fail(string:str) -> None:
 def run_test(in_list, answer) -> None:
 
 	stuff = in_list[0] #[[[1, 6, 6, 6], (['C6.H12.O6', 'O2'], ['C1.O2', 'H2.O1'])], [[1, 4, 1, 2], (['C1.O2', 'H2'], ['C1.H4', 'H2.O1'])]] # this is the oofshit when running with "sample_system_of_equations.txt" file.
-
+	print("stuff == "+str(stuff))
 	tree = Elemtree(stuff)
 
 	tree.construct_tree()

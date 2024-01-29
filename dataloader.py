@@ -2,7 +2,7 @@
 from pandas import read_csv
 
 def load_data():
-	filename = "/home/cyberhacker/Asioita/Ohjelmointi/Python/Chemicalequationbalancer/PeriodicTableCSV.csv"
+	filename = "PeriodicTableCSV.csv"
 	data = read_csv(filename)
 
 	#print(data['symbol'].tolist())

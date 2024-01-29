@@ -4,7 +4,7 @@ import sympy
 import copy
 import re
 import dataloader
-
+from treething import *
 
 
 
@@ -333,21 +333,39 @@ def getratio(substance1, substance2, oofshit, all_substances):
 	'''
 
 	# to get the stoichiometric ratio between two compunds is to find the ratio between their coefficients in a chemical equation:
-	print("Paskaaa:")
-	print(all_substances)
-	print(oofshit)
-
-	print(oofshit[0])
-
-	print(substance1)
-
-	print(oofshit[0][0][all_substances.index(substance2)])
-	print(oofshit[0][0][all_substances.index(substance1)])
-
-
-
-	ratio = oofshit[0][0][all_substances.index(substance1)]/oofshit[0][0][all_substances.index(substance2)]
-	return ratio
+	#print("Paskaaa:")
+	#print(all_substances)
+	#print(oofshit)
+	#print(oofshit[0])
+	#print(substance1)
+	#print(oofshit[0][0][all_substances.index(substance2)])
+	#print(oofshit[0][0][all_substances.index(substance1)])
+	#ratio = oofshit[0][0][all_substances.index(substance1)]/oofshit[0][0][all_substances.index(substance2)]
+	
+	# Instead of doing the janky stuff, let's use the treething tree solver. #  [[[1, 6, 6, 6], (['C6.H12.O6', 'O2'], ['C1.O2', 'H2.O1'])], [[1, 4, 1, 2], (['C1.O2', 'H2'], ['C1.H4', 'H2.O1'])]]
+	print("Here is the oofshit: "+str(oofshit))
+	# First construct the tree.
+	tree = Elemtree(oofshit)
+	tree.construct_tree()
+	# Now actually find the wanted elements. Remember that substance2 is the substance which we want to find
+	route = tree.traverse_tree(substance1, substance2)
+	if route == None:
+		# No path found. This means that the two chemical equations are completely independent of each other. Display an error message and quit.
+		print("Ei löydetty reittiä. Yhtälöt ovat toisistaan riippumattomia. Ongelma on ratkaisematon, eli ei voi ratkaista.")
+		exit(1)
+	print("Route: "+str(route))
+	ratio_list = []
+	for thing in route:
+		if isinstance(thing, Elemnode):
+			print("elemnode.x == "+str(thing.substance))
+		elif isinstance(thing,Elemedge):
+			print("ratio == "+str(thing.ratio))
+			ratio_list.append(thing.ratio)
+	x = 1
+	for thing in ratio_list:
+		x = x * thing
+	print("x: "+str(x))
+	return 1 / x # We need to divide one by x , because then we get the correct actual ratio
 
 
 
