@@ -421,6 +421,9 @@ def get_molar_mass(substance):
 
 
 def convert_to_moles_one_substance(substance, number_of_grams):
+	if "m" == number_of_grams[-1] or "mol" == number_of_grams[-3:]:
+		print("This value was given as a mole: "+str(substance))
+		return float(number_of_grams[:number_of_grams.index("m")])
 	molar_mass = get_molar_mass(substance)
 	print("Molar mass:")
 	print(molar_mass)
@@ -509,7 +512,7 @@ def balanceformula():
 
 	# find the limiting factor:
 	number_of_grams = str(input("Anna grammamäärät samassa järjestyksessä: ")).split(" ")
-	number_of_grams = [float(x) for x in number_of_grams]
+	#number_of_grams = [float(x) for x in number_of_grams]
 
 	number_of_moles = convert_to_moles(known_values, number_of_grams)
 	print("Number of moles")
